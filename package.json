@@ -9,7 +9,10 @@
     "build": "rm -rf lib && rollup -c --bundleConfigAsCjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "release": "npm run build && npm version",
+    "preversion": "npm run build",
+    "postversion": "git push --tags && npm publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
   },
   "repository": {
     "type": "git",
