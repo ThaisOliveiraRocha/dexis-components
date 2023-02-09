@@ -1,6 +1,6 @@
 {
   "name": "dexis-components",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Biblioteca de componentes",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -9,10 +9,7 @@
     "build": "rm -rf lib && rollup -c --bundleConfigAsCjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "release": "npm run build && npm version patch",
-    "preversion": "npm run build",
-    "postversion": "git push --tags && npm publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
