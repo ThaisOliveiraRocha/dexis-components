@@ -1,3 +1,1 @@
-import ChipsWithIcon from './ChipsWithIcon';
-
-export default ChipsWithIcon;
+export { default } from "./ChipsWithIcon";
