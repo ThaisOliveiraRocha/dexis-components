@@ -1,8 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import * as Styles from './ChipsWithIcon.styles';
+import "./ChipsWithIcon.css";
 
-interface Props {
+export interface Props {
   disabled?: boolean;
   title: string;
   selected: boolean;
