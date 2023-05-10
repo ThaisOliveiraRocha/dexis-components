@@ -16,18 +16,16 @@ const Template: ComponentStory<typeof ButtonWithIcon> = (args) => (
 // Reuse that template for creating different stories
 export const Enabled = Template.bind({});
 Enabled.args = {
-  text: "Enabled Button",
-  icon: "/images/printer.svg",
-  iconAlt: "Enabled Icon",
+  title: "Enabled Button",
+  icon: {src: "/images/printer.svg", alt: "Enabled Icon"},
   onClick: () => console.log("Enabled Button clicked"),
   id: "enabled-button",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  text: "Disabled Button",
-  icon: "/images/printerDisabled.svg",
-  iconAlt: "Disabled Icon",
+  title: "Disabled Button",
+  icon: {src: "/images/printerDisabled.svg", alt: "Disabled Icon"},
   onClick: () => console.log("Disabled Button clicked"),
   id: "disabled-button",
   disabled: true,
@@ -35,8 +33,7 @@ Disabled.args = {
 
 export const OnlyIcon = Template.bind({});
 OnlyIcon.args = {
-  icon: "/images/reload.svg",
-  iconAlt: "Disabled Icon",
+  icon: {src: "/images/reload.svg", alt: "Enabled reload Icon"},
   onClick: () => console.log("OnlyIcon Button clicked"),
   id: "only-icon-button",
   disabled: false,
@@ -44,8 +41,7 @@ OnlyIcon.args = {
 
 export const OnlyIconDisabled = Template.bind({});
 OnlyIconDisabled.args = {
-  icon: "/images/reloadDisabled.svg",
-  iconAlt: "Disabled Icon",
+  icon: {src: "/images/reloadDisabled.svg", alt: "Disabled reload Icon"},
   onClick: () => console.log("Disabled OnlyIconButton clicked"),
   id: "disabled-only-icon-button",
   disabled: true,

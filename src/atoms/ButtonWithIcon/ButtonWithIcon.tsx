@@ -3,25 +3,26 @@ import * as Styles from "./ButtonWithIcon.styles";
 
 export interface Props {
   disabled?: boolean;
-  text?: string;
-  icon: string;
-  iconAlt: string;
+  title?: string;
+  icon: {
+    src: string;
+    alt: string;
+  }
   onClick: () => void;
   id: string;
 }
 
 const ButtonWithIcon: FC<Props> = ({
   disabled = false,
-  text,
+  title,
   icon,
-  iconAlt,
   onClick,
   id,
 }: Props) => {
   return (
     <Styles.Container disabled={disabled} onClick={onClick} id={id}>
-      <Styles.Icon src={icon} alt={iconAlt} />
-      {text && <Styles.Text disabled={disabled}>{text}</Styles.Text>}
+      <Styles.Icon src={icon.src} alt={icon.alt} />
+      {title && <Styles.Title disabled={disabled}>{title}</Styles.Title>}
     </Styles.Container>
   );
 };

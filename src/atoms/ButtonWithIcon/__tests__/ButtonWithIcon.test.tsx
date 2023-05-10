@@ -7,8 +7,10 @@ import ButtonWithIcon from "../ButtonWithIcon";
 describe("ButtonWithIcon", () => {
   const onClickMock = jest.fn();
   const defaultProps = {
-    icon: "test-icon",
-    iconAlt: "Test Icon",
+    icon: {
+      src: "test-icon",
+      alt:  "Test Icon"
+    },
     onClick: onClickMock,
     id: "test-button",
   };
@@ -28,9 +30,9 @@ describe("ButtonWithIcon", () => {
     expect(icon.getAttribute("src")).toBe("test-icon");
   });
 
-  it("should render the button with text if text prop is provided", () => {
+  it("should render the button with title if title prop is provided", () => {
     const { getByText } = render(
-      <ButtonWithIcon {...defaultProps} text="Test Button" />
+      <ButtonWithIcon {...defaultProps} title="Test Button" />
     );
     const text = getByText("Test Button");
     expect(text).toBeInTheDocument();

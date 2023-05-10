@@ -22,7 +22,7 @@ export const Container = styled.button<IButton>`
   }
 `;
 
-export const Text = styled.span<IButton>`
+export const Title = styled.span<IButton>`
   font-family: "Nunito";
   color: ${(props) => props.disabled ? "#777777" : "#49454f"};
   font-size: 14px;
