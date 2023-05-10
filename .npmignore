@@ -2,3 +2,4 @@ src/
 rollup.config.js
 stories/
 storybook-static/
+lib/**/*.test.d.ts

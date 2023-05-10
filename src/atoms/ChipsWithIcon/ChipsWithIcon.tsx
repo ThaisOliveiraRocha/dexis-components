@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import * as Styles from './ChipsWithIcon.styles';
-import "./ChipsWithIcon.css";
+import "../../styles/global.css";
 
 export interface Props {
   disabled?: boolean;
