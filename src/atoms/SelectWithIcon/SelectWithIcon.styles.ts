@@ -12,6 +12,7 @@ export const Container = styled.div<ISelect>`
   height: 36px;
   border-radius: 8px;
   border: solid 1px #ccc;
+  background: #fff;
 
   :hover {
     border: ${(props) => !props.disabled && "solid 1px #333333"};
