@@ -44,7 +44,7 @@ Enabled.args = {
     },
   ],
   icon: { src: "/images/filter.svg", alt: "" },
-  onChange: () => console.log("Enabled Button clicked"),
+  onChange: (e) => console.log("Selected value: ", e.target.value),
   id: "enabled-select",
 };
 
@@ -78,7 +78,7 @@ Disabled.args = {
     },
   ],
   icon: { src: "/images/filterDisabled.svg", alt: "" },
-  onChange: () => console.log("Disabled Button clicked"),
+  onChange: (e) => console.log("Disabled Selected"),
   id: "disabled-select",
   disabled: true,
 };
@@ -101,6 +101,6 @@ EnabledWithPlaceholder.args = {
     },
   ],
   icon: { src: "/images/download.svg", alt: "" },
-  onChange: () => console.log("Enabled Button clicked"),
+  onChange: (e) => console.log("Selected value: " + e.target.value),
   id: "enabled-select",
 };

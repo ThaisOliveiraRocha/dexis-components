@@ -7,13 +7,13 @@ export interface Props {
   value?: any;
   list: Array<{
     value: any;
-    label: string;
+    label: any;
   }>;
   icon: {
     src: string;
     alt: string;
   };
-  onChange: () => void;
+  onChange: (e: any) => void;
   id: string;
 }
 
@@ -30,7 +30,7 @@ const SelectWithIcon: FC<Props> = ({
     <Styles.Container disabled={disabled}>
       <Styles.Icon src={icon.src} alt={icon.alt} />
 
-      <Styles.Dropdown disabled={disabled} data-testid="select">
+      <Styles.Dropdown disabled={disabled} data-testid="select" onChange={onChange}>
         {placeholder && (
           <Styles.Option
             value={""}
