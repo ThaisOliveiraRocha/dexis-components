@@ -18,12 +18,30 @@ export const Enabled = Template.bind({});
 Enabled.args = {
   value: "Teste",
   list: [
-    "Agro",
-    "Pessoa Fisica",
-    "Pessoa Juridica",
-    "Backoffice",
-    "Expresso",
-    "Todas as filas",
+    {
+      value: 0,
+      label: "Agro",
+    },
+    {
+      value: 1,
+      label: "Pessoa Fisica",
+    },
+    {
+      value: 2,
+      label: "Pessoa Juridica",
+    },
+    {
+      value: 3,
+      label: "Backoffice",
+    },
+    {
+      value: 4,
+      label: "Expresso",
+    },
+    {
+      value: 5,
+      label: "Todas as filas",
+    },
   ],
   icon: { src: "/images/filter.svg", alt: "" },
   onChange: () => console.log("Enabled Button clicked"),
@@ -34,12 +52,30 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   value: "Disabled Teste",
   list: [
-    "Agro",
-    "Pessoa Fisica",
-    "Pessoa Juridica",
-    "Backoffice",
-    "Expresso",
-    "Todas as filas",
+    {
+      value: 0,
+      label: "Agro",
+    },
+    {
+      value: 1,
+      label: "Pessoa Fisica",
+    },
+    {
+      value: 2,
+      label: "Pessoa Juridica",
+    },
+    {
+      value: 3,
+      label: "Backoffice",
+    },
+    {
+      value: 4,
+      label: "Expresso",
+    },
+    {
+      value: 5,
+      label: "Todas as filas",
+    },
   ],
   icon: { src: "/images/filterDisabled.svg", alt: "" },
   onChange: () => console.log("Disabled Button clicked"),
@@ -49,11 +85,20 @@ Disabled.args = {
 
 export const EnabledWithPlaceholder = Template.bind({});
 EnabledWithPlaceholder.args = {
-  placeholder: "Download", 
+  placeholder: "Download",
   list: [
-    "Documento PDF (.pdf)",
-    "Microsoft Excel (.xlsx)",
-    "Comma Separated Values (.csv)",
+    {
+      value: 0,
+      label: "Documento PDF (.pdf)",
+    },
+    {
+      value: 1,
+      label: "Microsoft Excel (.xlsx)",
+    },
+    {
+      value: 2,
+      label: "Comma Separated Values (.csv)",
+    },
   ],
   icon: { src: "/images/download.svg", alt: "" },
   onChange: () => console.log("Enabled Button clicked"),

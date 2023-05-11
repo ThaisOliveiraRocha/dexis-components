@@ -1,62 +1,43 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import SelectWithIcon from "../SelectWithIcon";
 
-describe("ButtonWithIcon", () => {
-  const onClickMock = jest.fn();
-  const defaultProps = {
-    icon: "test-icon",
-    iconAlt: "Test Icon",
-    onClick: onClickMock,
-    id: "test-button",
-  };
+const list = [
+  { value: "0", label: "Item 1" },
+  { value: "1", label: "Item 2" },
+  { value: "2", label: "Item 3" },
+  { value: "3", label: "Item 4" },
+];
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
+const defaultProps = {
+  value: "Teste",
+  list: list,
+  icon: { src: "icon.png", alt: "icon" },
+  onChange: jest.fn(),
+  id: "test",
+};
 
-  it("should render the button with an icon", () => {
-    const { getByRole, getByAltText } = render(
-      <ButtonWithIcon {...defaultProps} />
+describe("<SelectWithIcon />", () => {
+  it("should render SelectWithIcon with placeholder", () => {
+    const { getByTestId, getByText } = render(
+      <SelectWithIcon {...defaultProps} placeholder="Teste placeholder" />
     );
-    const button = getByRole("button");
-    const icon = getByAltText("Test Icon");
-    expect(button).toBeInTheDocument();
-    expect(icon).toBeInTheDocument();
-    expect(icon.getAttribute("src")).toBe("test-icon");
+    expect(getByTestId("placeholder").textContent).toBe("Teste placeholder");
   });
 
-  it("should render the button with text if text prop is provided", () => {
+  it("should render SelectWithIcon options", () => {
     const { getByText } = render(
-      <ButtonWithIcon {...defaultProps} text="Test Button" />
+      <SelectWithIcon {...defaultProps} />
     );
-    const text = getByText("Test Button");
-    expect(text).toBeInTheDocument();
-  });
-
-  it("should call the onClick function when the button is clicked", () => {
-    const { getByRole } = render(<ButtonWithIcon {...defaultProps} />);
-    const button = getByRole("button");
-    fireEvent.click(button);
-    expect(onClickMock).toHaveBeenCalledTimes(1);
-  });
-
-  it("should not call the onClick function when the button is disabled", () => {
-    const { getByRole } = render(
-      <ButtonWithIcon {...defaultProps} disabled={true} />
-    );
-    const button = getByRole("button");
-    fireEvent.click(button);
-    expect(onClickMock).toHaveBeenCalledTimes(0);
-  });
-
-  it("should be disabled if the disabled prop is true", () => {
-    const { getByRole } = render(
-      <ButtonWithIcon {...defaultProps} disabled={true} />
-    );
-    const button = getByRole("button");
-    expect(button).toBeDisabled();
+    expect(getByText('Item 1')).toBeInTheDocument;
+    expect(getByText('Item 2')).toBeInTheDocument;
+    expect(getByText('Item 3')).toBeInTheDocument;
+    expect(getByText('Item 4')).toBeInTheDocument;
   });
 });

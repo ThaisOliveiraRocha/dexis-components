@@ -4,8 +4,11 @@ import * as Styles from "./SelectWithIcon.styles";
 export interface Props {
   disabled?: boolean;
   placeholder?: string;
-  value?: string;
-  list: Array<any>;
+  value?: any;
+  list: Array<{
+    value: any;
+    label: string;
+  }>;
   icon: {
     src: string;
     alt: string;
@@ -26,14 +29,15 @@ const SelectWithIcon: FC<Props> = ({
   return (
     <Styles.Container disabled={disabled}>
       <Styles.Icon src={icon.src} alt={icon.alt} />
-      <Styles.Dropdown disabled={disabled}>
+
+      <Styles.Dropdown disabled={disabled} data-testid="select">
         {placeholder && (
           <Styles.Option
             value={""}
             disabled
             selected={value ? false : true}
             hidden
-            data-testid="select-option"
+            data-testid="placeholder"
           >
             {placeholder}
           </Styles.Option>
@@ -42,12 +46,12 @@ const SelectWithIcon: FC<Props> = ({
           list.map((option) => {
             return (
               <Styles.Option
-                value={option}
-                key={option}
-                selected={option == value}
-                data-testid="select-option"
+                value={option.value}
+                key={option.value}
+                selected={option.value == value}
+                data-testid="option"
               >
-                {option}
+                {option.label}
               </Styles.Option>
             );
           })}
