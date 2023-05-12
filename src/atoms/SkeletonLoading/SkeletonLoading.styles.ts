@@ -13,8 +13,8 @@ export const Skeleton = styled.div<Props>`
   background-image: linear-gradient(
     120deg,
     #f5f5f5 30%,
-    #e6e6e6 38%,
-    #e6e6e6 40%,
+    #F0F0F0 38%,
+    #F0F0F0 40%,
     #f5f5f5 48%
   );
   background-size: 200% 100%;
