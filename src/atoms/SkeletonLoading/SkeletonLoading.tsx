@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const SkeletonLoading: FC<Props> = (props: Props) => {
-  return <Styles.Skeleton {...props} />;
+  return <Styles.Skeleton data-testid="skeleton" {...props} />;
 };
 
 export default SkeletonLoading;
