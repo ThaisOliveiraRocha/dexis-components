@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import * as Styles from "./ButtonWithIcon.styles";
+import "../../styles/global.css";
 
 export interface Props {
   disabled?: boolean;
