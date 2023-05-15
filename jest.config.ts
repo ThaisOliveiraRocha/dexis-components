@@ -9,11 +9,6 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     "\\.(css|sass)$": "identity-obj-proxy",
   },
-  transformIgnorePatterns: [
-    "<rootDir>/node_modules/",
-    "^.+\\.module\\.(css|sass|scss)$",
-    "<rootDir>/lib/.*\\.d\\.ts$",
-  ],
 };
 
 export default config;
